@@ -3,24 +3,22 @@ import json
 import logging
 
 # Check for Quality
+# Since Risk Factor follows reverse scoring pattern while taking input from UI
 def get_risk_status_and_quality(risk_score: float):
-            if 8 < risk_score <= 10:
-                return 0.75  # Lower quality for high risk
-
-            elif 5 < risk_score <= 8:
-                return  0.85
+    if risk_score <= 2:
+        return 0.75  # Lower quality for high risk
+    elif risk_score <= 4:
+        return  0.85     
+    elif risk_score <= 7:
+        return  0.95
+    else:
+        return  1.0  # Highest quality for safest risk
                 
-            elif 3 < risk_score <= 5:
-                return  0.95
-            
-            else:
-                return  1.0  # Highest quality for safest risk
-                
-        # Test cases
-        # print(get_risk_status_and_quality(1))  # Safe Risk, Quality Score: 1.0
-        # print(get_risk_status_and_quality(3))  # Safe Risk, Quality Score: 1.0
-        # print(get_risk_status_and_quality(6))  # Moderate Risk, Quality Score: 0.85
-        # print(get_risk_status_and_quality(8))  # High Safe, Quality Score: 0.75
+        # Test cases 
+        # print(get_risk_status_and_quality(1))  # Safe Risk, Quality Score: 0.75
+        # print(get_risk_status_and_quality(3))  # Safe Risk, Quality Score: 0.85
+        # print(get_risk_status_and_quality(6))  # Moderate Risk, Quality Score: 0.95
+        # print(get_risk_status_and_quality(8))  # High Safe, Quality Score: 1
  
 
 # Check for Authenticity
