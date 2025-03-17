@@ -55,9 +55,10 @@ def calculate_individual_proofs(unique_tokens, combined_tokens):
     }
     
     valid_categories = {
-        "MemeCoins", "Web3Gaming", "BlueChipDeFi", "AIAgent", "Layer1", "Layer2Layer3", 
-        "RWA", "DecentralizedAI", "DecentralizedFinance", "DePIN", "LiquidStakingRestaking", 
-        "BlockchainServiceInfra"
+        "Meme Coins", "Web3 Gaming", "Blue Chip DeFi", "AI Agent", "Layer 1", 
+        "Layer 2 / Layer 3", "RWA (Real World Assets)", "Decentralized AI", 
+        "Decentralized Finance", "DePIN", "Liquid Staking & Restaking", 
+        "Blockchain Service Infra"
     }
     
     for token in unique_tokens:
