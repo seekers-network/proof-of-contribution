@@ -28,7 +28,7 @@ def load_config() -> Dict[str, Any]:
         'jwt_secret_key': os.environ.get('JWT_SECRET_KEY'),
         'file_id': os.environ.get('FILE_ID'),
         'signature': os.environ.get('SIGNATURE'),
-        'max_token_reward': os.environ.get("MAX_TOKEN_REWARD"),
+        'max_token_reward': os.environ.get("MAX_TOKEN_REWARD",5),
         'reward_per_token': os.environ.get("REWARD_PER_TOKEN",1),
         'fixed_message': os.environ.get('FIXED_MESSAGE'),
         'redis_port': os.environ.get('REDIS_PORT', None),

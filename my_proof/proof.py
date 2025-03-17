@@ -15,7 +15,7 @@ class Proof:
     def __init__(self, config: Dict[str, Any]):
         self.config = config
         self.proof_response = ProofResponse(dlp_id=config['dlp_id'])
-        self.max_rewards = os.environ.get("MAX_TOKEN_REWARD",20)
+        self.max_rewards = os.environ.get("MAX_TOKEN_REWARD",5)
         self.reward_per_token = os.environ.get("REWARD_PER_TOKEN",1)
         self.wallet_address = ""
     
