@@ -23,7 +23,7 @@ def load_config() -> Dict[str, Any]:
         'input_dir': INPUT_DIR,
         'use_sealing': os.path.isdir(SEALED_DIR),
         'dlp_id': os.environ.get("DLP_ID", 31),  # DLP ID defaults to 31
-        'jwt_expiration_time': os.environ.get('JWT_EXPIRATION_TIME', 600),
+        'jwt_expiration_time': int(os.environ.get('JWT_EXPIRATION_TIME', 600)),
         'validator_base_api_url': os.environ.get('VALIDATOR_BASE_API_URL', None),
         'jwt_secret_key': os.environ.get('JWT_SECRET_KEY'),
         'file_id': os.environ.get('FILE_ID'),
@@ -34,6 +34,7 @@ def load_config() -> Dict[str, Any]:
         'redis_port': os.environ.get('REDIS_PORT', None),
         'redis_host': os.environ.get('REDIS_HOST', None),
         'redis_pwd': os.environ.get('REDIS_PWD', None),
+        'redis_username': os.environ.get('REDIS_USERNAME', '')
         "vana": os.environ.get("VANA_RPC_URL"),
         "ethereum": os.environ.get("ETH_RPC_URL"),
         "base": os.environ.get("BASE_RPC_URL"),
